@@ -24,7 +24,7 @@ export default function Home() {
               Our Vision
             </h2>
             <p className="text-gray-300 text-lg mb-8">
-              WIDD.AI leads the Middle East's AI revolution with cutting-edge
+              WIDD.AI leads the Middle East&apos;s AI revolution with cutting-edge
               autonomous agents and advanced AI systems. Our mission is to
               empower organizations across the region with intelligent solutions
               that learn, adapt, and evolve to meet complex challenges in

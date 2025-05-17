@@ -50,7 +50,7 @@ export default function About() {
               <p className="text-gray-300">
                 Our mission is to lead the AI revolution in the Middle East,
                 delivering sophisticated AI solutions that push the boundaries
-                of what's possible in enterprise automation and intelligence.
+                of what&apos;s possible in enterprise automation and intelligence.
               </p>
             </motion.div>
             <motion.div

@@ -33,7 +33,7 @@ export default function Contact() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Let's discuss how WIDD.AI can transform your business with
+              Let&apos;s discuss how WIDD.AI can transform your business with
               cutting-edge AI solutions
             </p>
           </motion.div>
