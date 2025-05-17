@@ -1,103 +1,133 @@
+"use client";
+
+import Hero from "@/components/Hero";
+import AIAnimation from "@/components/AIAnimation";
+import SolutionsShowcase from "@/components/SolutionsShowcase";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-secondary-dark min-h-screen">
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Vision Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+              Our Vision
+            </h2>
+            <p className="text-gray-300 text-lg mb-8">
+              WIDD.AI leads the Middle East's AI revolution with cutting-edge
+              autonomous agents and advanced AI systems. Our mission is to
+              empower organizations across the region with intelligent solutions
+              that learn, adapt, and evolve to meet complex challenges in
+              real-time.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="/about"
+                className="text-primary hover:text-primary-light transition-colors"
+              >
+                Learn More →
+              </a>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative h-[400px]"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/globe.svg"
+              alt="Global AI Network"
+              fill
+              className="object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Advanced AI Technologies Section with AIAnimation */}
+      <SolutionsShowcase />
+
+      {/* Key Solutions Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-secondary-light/10 relative overflow-hidden">
+        {/* AI Animation Background */}
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          <AIAnimation />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 relative z-10"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
+            Key Solutions
+          </h2>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+            From autonomous agents to real-time analytics, our solutions are
+            designed to transform businesses and industries.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+          {[
+            {
+              title: "Autonomous AI Agents",
+              description:
+                "Advanced AI agents with deep learning capabilities, natural language understanding, and adaptive decision-making for complex enterprise tasks.",
+              icon: "/window.svg",
+            },
+            {
+              title: "Real-Time Intelligence",
+              description:
+                "Sophisticated real-time analytics and predictive systems powered by neural networks and machine learning.",
+              icon: "/file.svg",
+            },
+            {
+              title: "Advanced Computer Vision",
+              description:
+                "State-of-the-art visual AI with deep learning models for intelligent recognition and processing.",
+              icon: "/vercel.svg",
+            },
+          ].map((solution, index) => (
+            <motion.div
+              key={solution.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-secondary-dark p-6 rounded-lg border border-gray-800 hover:border-primary transition-colors"
+            >
+              <div className="w-12 h-12 mb-4">
+                <Image
+                  src={solution.icon}
+                  alt={solution.title}
+                  width={48}
+                  height={48}
+                  className="dark:invert"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {solution.title}
+              </h3>
+              <p className="text-gray-400">{solution.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
